@@ -1,0 +1,6 @@
+{
+  "name": "Kolkata Cyber-Grid 033",
+  "description": "An offline local RAG intelligence system grounded in Kolkata city planning, featuring automated pure-electric transit grids, digital e-Rupee red envelope incentives, a dynamic city events planner, secure admin controls, and a responsive citizen complaints tracking registry dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #1a73e8;
+  --color-brand-red: #ea4335;
+  --color-brand-yellow: #fbbc05;
+  --color-brand-green: #34a853;
+  --color-google-gray: #f8f9fa;
+  --color-google-border: #dadce0;
+  --color-google-text: #202124;
+  --color-google-text-secondary: #5f6368;
+  --font-sans: "Inter", "Google Sans", system-ui, sans-serif;
+  --font-mono: "Fira Code", monospace;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #202124;
+  margin: 0;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Material Design Shadowing */
+.google-shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+}
+
+.google-shadow-md {
+  box-shadow: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+}
+
+.google-card {
+  background-color: #ffffff;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.google-card:hover {
+  box-shadow: 0 1px 3px 0 rgba(60,64,67,0.2), 0 6px 12px 4px rgba(60,64,67,0.15);
+}
+
+/* Blue location radar effect matching Google Maps active location */
+@keyframes mapsRipple {
+  0% {
+    r: 6px;
+    stroke-opacity: 0.8;
+    stroke-width: 1px;
+  }
+  100% {
+    r: 22px;
+    stroke-opacity: 0;
+    stroke-width: 4px;
+  }
+}
+
+.maps-ripple {
+  animation: mapsRipple 1.8s infinite cubic-bezier(0.1, 0.8, 0.3, 1);
+}
+
+/* Custom Webkit scrollbars styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #787878;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Animated Underline for Google Form Inputs */
+.google-input-container {
+  position: relative;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.google-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  background-color: transparent;
+  font-size: 14px;
+  color: #202124;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.google-input:focus {
+  border-color: #1a73e8;
+  border-width: 2px;
+  padding: 11px 13px;
+}
+
+.google-placeholder {
+  pointer-events: none;
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  color: #5f6368;
+  background-color: #ffffff;
+  padding: 0 4px;
+  transition: 0.2s ease all;
+  font-size: 14px;
+}
+
+.google-input:focus ~ .google-placeholder,
+.google-input:not(:placeholder-shown) ~ .google-placeholder {
+  top: -8px;
+  left: 10px;
+  font-size: 11px;
+  color: #1a73e8;
+  font-weight: 500;
+}
